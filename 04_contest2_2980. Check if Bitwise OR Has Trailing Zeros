@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool hasTrailingZeros(vector<int>& nums) {
+        int numbers = nums.size();
+        for(int ii = 0 ; ii< numbers ; ii++){
+            for (int jj = ii+1 ; jj<numbers ; jj++){
+                int bit = nums[ii] | nums[jj];
+                if((bit & 1)==0){
+                    return true ;
+                }
+            }
+        }
+        return false ;
+        
+    }
+};
